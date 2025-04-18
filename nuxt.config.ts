@@ -20,7 +20,7 @@ export default defineNuxtConfig({
         compressPublicAssets: true,
 
         imports: {
-            dirs: ["server/utils/**", "utils/**"],
+            dirs: ['server/utils/**', 'utils/**'],
         },
     },
 
@@ -47,23 +47,19 @@ export default defineNuxtConfig({
         strict: true,
     },
 
-    modules: [
-        '@nuxt/fonts',
-        '@nuxt/image',
-        '@nuxtjs/seo',
-        '@nuxt/content',
-        '@vueuse/nuxt',
-        'shadcn-nuxt',
-    ],
+    modules: ['@nuxt/fonts', '@nuxt/image', '@nuxtjs/seo', '@nuxt/content', '@vueuse/nuxt', 'shadcn-nuxt', 'nuxt-svgo'],
 
     shadcn: {
         prefix: 'Ui',
         componentDir: './app/components/ui',
     },
 
-    components: {
-        global: true,
-    },
+    components: [
+        {
+            path: '~/components',
+            pathPrefix: false,
+        },
+    ],
 
     vueuse: {
         ssrHandlers: true,
@@ -74,5 +70,12 @@ export default defineNuxtConfig({
             linkActiveClass: 'link-active',
             linkExactActiveClass: 'link-exact-active text-primary',
         },
+    },
+
+    fonts: {
+        defaults: {
+            weights: [400, 900],
+        },
+        priority: ['fontsource', 'bunny', 'google'],
     },
 })

@@ -57,7 +57,8 @@
       "quoteProperties": "asNeeded",
       "trailingCommas": "all",
       "semicolons": "asNeeded",
-      "arrowParentheses": "always"
+      "arrowParentheses": "always",
+      "attributePosition": "multiline"
     },
     "globals": ["$", "_"]
   },
